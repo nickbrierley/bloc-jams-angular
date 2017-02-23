@@ -52,6 +52,14 @@
             ]
         };
         
+        Fixtures.getCollection = function(numberOfAlbums) {
+            var albums = [];
+            for (var i = 0; i < numberOfAlbums; i++) {
+                albums.push(albumPat);
+            }
+            return albums;
+        }
+        
         Fixtures.getAlbum = function() {
             return albumPat;
         };
