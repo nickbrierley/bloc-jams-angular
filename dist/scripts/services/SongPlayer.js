@@ -23,19 +23,22 @@
             currentBuzzObject = new buzz.sound(song.audioUrl, {
                 formats: ['mp3'],
                 preload: true
-        });
+            });
  
-    currentSong = song;
- };
+            currentSong = song;
+        };
         
         SongPlayer.play = function(song) {
             if (currentSong !== song) {
+                
                 setSong(song);
                 currentBuzzObject.play();
                 song.playing = true;
+            
             } else if (currentSong === song) {
                 if (currentBuzzObject.isPaused()) {
                     currentBuzzObject.play();
+                    song.playing = true;
                 }
             }
         };
